@@ -158,16 +158,19 @@ export default {
   max-width: 600px;
   margin: 0 auto;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px var(--shadow);
   overflow: hidden;
   font-family: Arial, sans-serif;
+  background-color: var(--chat-container-bg);
+  transition: background-color 0.3s ease;
 }
 
 .chat-header {
-  background-color: #1976d2;
-  color: white;
+  background-color: var(--header-bg);
+  color: var(--header-text);
   padding: 15px 20px;
   text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .chat-header h3 {
@@ -179,10 +182,11 @@ export default {
   height: 400px;
   overflow-y: auto;
   padding: 20px;
-  background-color: #f5f5f5;
+  background-color: var(--chat-bg);
   display: flex;
   flex-direction: column;
   gap: 15px;
+  transition: background-color 0.3s ease;
 }
 
 .message-item {
@@ -204,15 +208,17 @@ export default {
   border-radius: 18px;
   word-wrap: break-word;
   position: relative;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .message-item.question .message-content {
-  background-color: white;
+  background-color: var(--question-bg);
   border-bottom-left-radius: 4px;
 }
 
 .message-item.answer .message-content {
-  background-color: #dcf8c6;
+  background-color: var(--answer-bg);
   border-bottom-right-radius: 4px;
 }
 
@@ -232,21 +238,21 @@ export default {
 }
 
 .btn-yes {
-  background-color: #4caf50;
+  background-color: var(--button-yes);
   color: white;
 }
 
 .btn-yes:hover {
-  background-color: #45a049;
+  background-color: rgb(56, 142, 60);
 }
 
 .btn-no {
-  background-color: #f44336;
+  background-color: var(--button-no);
   color: white;
 }
 
 .btn-no:hover {
-  background-color: #da190b;
+  background-color: rgb(211, 47, 47);
 }
 
 .result-buttons {
@@ -257,21 +263,21 @@ export default {
 }
 
 .btn-finish {
-  background-color: #1976d2;
+  background-color: var(--button-finish);
   color: white;
 }
 
 .btn-finish:hover {
-  background-color: #1565c0;
+  background-color: rgb(21, 101, 192);
 }
 
 .btn-retry {
-  background-color: #ff9800;
+  background-color: var(--button-retry);
   color: white;
 }
 
 .btn-retry:hover {
-  background-color: #f57c00;
+  background-color: rgb(245, 124, 0);
 }
 
 /* 滚动条样式 */
@@ -280,16 +286,16 @@ export default {
 }
 
 .chat-messages::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--chat-bg);
   border-radius: 3px;
 }
 
 .chat-messages::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
+  background: var(--shadow);
   border-radius: 3px;
 }
 
 .chat-messages::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+  background: rgba(255, 255, 255, 0.2);
 }
 </style>
