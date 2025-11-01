@@ -11,7 +11,20 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
+  
+  <!-- 更多服务按钮 -->
+  <div style="text-align: center; margin: 20px 0;">
+    <router-link to="/more-services">
+      <button style="padding: 10px 20px; font-size: 16px; background-color: #409EFF; color: white; border: none; border-radius: 4px; cursor: pointer;">
+        更多服务
+      </button>
+    </router-link>
+  </div>
+  
   <HelloWorld msg="Vite + Vue" />
+  
+  <!-- 路由出口 -->
+  <router-view></router-view>
 </template>
 
 <style scoped>
