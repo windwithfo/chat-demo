@@ -1,30 +1,48 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue'
+import router from './router'
+import './assets/vue.svg'
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div id="app">
+    <!-- 公共Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <img src="./assets/vue.svg" alt="Logo" class="logo" />
+        <span class="header-title">系统登录</span>
+      </div>
+    </header>
+    
+    <!-- 路由视图 -->
+    <router-view />
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
+.app-header {
+  height: 50px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e4e7ed;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  height: 32px;
+  margin-right: 12px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.header-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #303133;
 }
 </style>
